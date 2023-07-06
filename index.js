@@ -58,3 +58,8 @@ function toggleModal() {
     document.body.classList += " modal--open";
 
 }
+
+function scrollToTop() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  }
+  
