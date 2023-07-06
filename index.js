@@ -1,3 +1,15 @@
+let isModalOpen = false;
+let isContrastOn = false;
+
+function toggleContrast() {
+    isContrastOn = !isContrastOn;
+    if (isContrastOn) {
+        document.body.classList += " dark-theme"
+    }
+    else {
+        document.body.classList.remove("dark-theme")
+    }
+}
 function contact(event) {
   event.preventDefault();
   const loading = document.querySelector(".modal__overlay--loading");
@@ -20,7 +32,7 @@ function contact(event) {
         );
     })
 }
-let isModalOpen = false;
+
 function toggleModal() {
     if (isModalOpen) {
         isModalOpen = false;
