@@ -1,6 +1,7 @@
 let isModalOpen = false;
 let isContrastOn = false;
-
+const currentYear = new Date().getFullYear();
+document.getElementById("year").innerHTML = currentYear;
 function toggleContrast() {
     isContrastOn = !isContrastOn;
     if (isContrastOn) {
