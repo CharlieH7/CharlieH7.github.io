@@ -154,7 +154,8 @@ nav,
 .dark-theme .header__para,
 .dark-theme #languages,
 .dark-theme #projects,
-.dark-theme .project__wrapper--background {
+.dark-theme .project__wrapper--background,
+.dark-theme .connect {
   background-color: #242424;
   color: #fff;
 }
