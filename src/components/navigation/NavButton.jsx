@@ -44,12 +44,21 @@ const NavButton = ({ x, y, label, link, icon, newTab }) => {
         href={link}
         target={newTab ? "_blank" : "_self"}
         className="text-white rounded-full flex items-center justify-center
-        bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] 
+        bg-background/20 border border-accent/30 border-solid backdrop-blur-[6px] shadow-glass-inset
+        hover:shadow-glass-sm
         "
         aria-label={label}
         name={label}
       >
-        <span className="relative w-14 h-14 p-4">{getIcon(icon)}</span>
+        <span className="relative peer w-14 h-14 p-4 animate-spin-slow-reverse group-hover:pause hover:text-accent">
+          {getIcon(icon)}
+        </span>
+        <span
+          className="absolute hidden peer-hover:block px-2 py-1 left-full mx-2 top-1/2 -translate-y-1/2 bg-background 
+        text-foreground text-sm rounded-md shadow-lg whitespace-nowrap"
+        >
+          {label}
+        </span>
       </Link>
     </div>
   );
