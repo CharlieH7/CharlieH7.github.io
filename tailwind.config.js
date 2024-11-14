@@ -12,7 +12,7 @@ module.exports = {
       },
       colors: {
         background: "rgb(var(--background))",
-        foreground: "rgb(var(--background))",
+        foreground: "rgb(var(--foreground))",
         muted: "rgb(var(--muted))",
         accent: "rgb(var(--accent))",
       },
