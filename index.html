@@ -3,19 +3,13 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charlie Huang</title>
+    <title>Charlie Huang | Frontend Engineer</title>
     <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/x-icon" href="./assets/CH.svg" />
-    <script
-      src="https://kit.fontawesome.com/f6cc9abe5a.js"
-      crossorigin="anonymous"
-    ></script>
-    <script
-      type="text/javascript"
-      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"
-    ></script>
+    <link rel="icon" type="image/x-icon" href="./assets/ch.svg" />
+    <script src="https://kit.fontawesome.com/f6cc9abe5a.js" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
     <script src="index.js" defer></script>
-    <script type="text/javascript">
+    <script>
       (function () {
         emailjs.init("i4Ysn7FwxaL2UqEMV");
       })();
@@ -23,545 +17,159 @@
   </head>
   <body>
     <section id="landing-page" onmousemove="moveBackground(event)">
-      <nav>
-        <figure>
-          <img id="personal-logo" src="./assets/ch.svg" alt="" />
-        </figure>
+      <nav class="nav">
+        <a href="#landing-page" class="logo-wrap">
+          <img id="personal-logo" src="./assets/ch.svg" alt="Charlie logo" />
+        </a>
         <ul class="nav__link--list">
-          <li class="nav__link">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >About</a
-            >
-          </li>
-          <li class="nav__link">
-            <a
-              href="#projects"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Projects</a
-            >
-          </li>
-          <li class="nav__link" onclick="toggleModal()">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              >Contact</a
-            >
-          </li>
-          <li class="nav__link" onclick="toggleContrast()">
-            <a
-              href="#"
-              class="nav__link--anchor link__hover-effect link__hover-effect--black"
-              ><i class="fas fa-adjust click"></i
-            ></a>
+          <li><a href="#about" class="nav__link--anchor">About</a></li>
+          <li><a href="#projects" class="nav__link--anchor">Projects</a></li>
+          <li><a href="#" class="nav__link--anchor" onclick="toggleModal()">Contact</a></li>
+          <li>
+            <button class="theme-toggle" onclick="toggleContrast()" aria-label="Toggle theme">
+              <i class="fas fa-adjust"></i>
+            </button>
           </li>
         </ul>
       </nav>
-      <header class="header">
-        <div class="header__content">
-          <h1 class="title">Hey</h1>
-          <h2 class="title lightblue">I'm Charlie.</h2>
-          <figure class="about-me__picture--mask">
-            <img
-              src="./assets/me.jpg"
-              class="about-me__picture"
-              alt="Picture of Me!"
-            />
-          </figure>
-          <div class="wave">👋</div>
-          <p class="header__para">
-            I'm a <b class="lightblue">Frontend Software Engineer</b> with a
-            strong passion for building web applications with great user
-            experiences.
-            <br />
-            Here's a bit more
-            <b onclick="toggleModal()" class="lightblue click">about me.</b>
-          </p>
-          <br />
-          <p class="connect">CONNECT WITH ME</p>
-          <div class="social__list">
-            <a
-              href="https://www.linkedin.com/in/pin-hsun-huang/"
-              target="_blank"
-              class="social__link click"
-            >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
-            <a
-              href="https://github.com/CharlieH7"
-              target="_blank"
-              class="social__link click"
-            >
-              <i class="fa-brands fa-github"></i>
-            </a>
-            <a
-              href="./assets/Resume.pdf"
-              target="_blank"
-              class="social__link click"
-            >
-              <i class="fas fa-file-pdf"></i>
-            </a>
-          </div>
+
+      <header class="hero header">
+        <p class="eyebrow">Frontend Software Engineer · Sydney</p>
+        <h1>Hey, I'm <span class="lightblue">Charlie Huang</span>.</h1>
+        <p class="hero__para">
+          I design and build clean, high-performing web experiences that feel premium and convert.
+          I focus on animation, clarity, and frontend architecture that scales.
+        </p>
+        <div class="hero__actions">
+          <a href="#projects" class="btn btn--primary">View Projects</a>
+          <button class="btn btn--ghost" onclick="toggleModal()">Let's work together</button>
+        </div>
+        <div class="social__list">
+          <a href="https://www.linkedin.com/in/pin-hsun-huang/" target="_blank" class="social__link"><i class="fa-brands fa-linkedin"></i></a>
+          <a href="https://github.com/CharlieH7" target="_blank" class="social__link"><i class="fa-brands fa-github"></i></a>
+          <a href="./assets/Resume.pdf" target="_blank" class="social__link"><i class="fas fa-file-pdf"></i></a>
         </div>
       </header>
-      <button class="mail__btn click" onclick="toggleModal()">
-        <i class="fas fa-envelope"></i>
-      </button>
-      <a href="#projects" class="scroll">
-        <div class="scroll__icon click"></div>
-      </a>
-      <div class="modal">
-        <div class="modal__half modal__about">
-          <h3 class="modal__title modal__title--about">
-            Here's a bit about me.
-          </h3>
-          <h4 class="modal__subtitle modal__subtitle--about">
-            Frontend Software Engineer
-            <hr />
-          </h4>
-          <p class="modal__paragraph">
-            I'm a 21-year-old Computer Science student at UTS with a passion for
-            <b class="lightblue">frontend development</b>. I have a deep
-            understanding of programming principles and a strong foundation in
-            computer science. I'm eager to bring
-            <b class="lightblue">value</b> to your business as a frontend
-            developer.
-          </p>
-          <p class="modal__paragraph">
-            I'm proficient in HTML, CSS, JavaScript, and TypeScript, and have
-            experience with popular frameworks like
-            <b class="lightblue">React</b> and <b class="lightblue">Vue.js</b>,
-            enabling me to build <b class="lightblue">dynamic</b> and
-            <b class="lightblue">responsive</b> user interfaces with great
-            <b class="lightblue">user experiences.</b>
-          </p>
-          <div class="modal__languages">
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
-                alt="HTML Logo"
-              />
-              <span class="modal__language--name">HTML</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
-                alt="CSS Logo"
-              />
-              <span class="modal__language--name">CSS</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
-                alt="JavaScript Logo"
-              />
-              <span class="modal__language--name">JavaScript</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png"
-                alt="TypeScript Logo"
-              />
-              <span class="modal__language--name">TypeScript</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
-                alt="React Logo"
-              />
-              <span class="modal__language--name">React</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://cdn.iconscout.com/icon/free/png-256/vue-282497.png"
-                alt="Vue Logo"
-              />
-              <span class="modal__language--name">Vue</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://cdn.iconscout.com/icon/free/png-256/nuxt-dot-js-3628959-3030184.png"
-                alt="Nuxt Logo"
-              />
-              <span class="modal__language--name">Nuxt</span>
-            </figure>
-            <figure class="modal__language">
-              <img
-                class="modal__language--image"
-                src="https://mobx.js.org/img/mobx.png"
-                alt="MobX Logo"
-              />
-              <span class="modal__language--name">MobX</span>
-            </figure>
-          </div>
-        </div>
-        <div class="modal__half modal__contact">
-          <i class="fas fa-times modal__exit click" onclick="toggleModal()"></i>
-          <h3 class="modal__title modal__title--contact">Let's have a chat!</h3>
-          <h4 class="modal__subtitle modal__subtitle--contact">
-            I'm currently open to new oppourtunities.
-          </h4>
-          <form id="contact__form" onsubmit="contact(event)">
-            <div class="form__item">
-              <label class="form__item--label">Name</label>
-              <input class="input" name="user_name" type="text" required />
-            </div>
-            <div class="form__item">
-              <label class="form__item--label">Email</label>
-              <input class="input" name="user_email" type="email" required />
-            </div>
-            <div class="form__item">
-              <label class="form__item--label">Message</label>
-              <textarea
-                class="input"
-                name="message"
-                type="text"
-                required
-              ></textarea>
-            </div>
-            <button id="contact__submit" class="form__submit">
-              Send it my way
-            </button>
-          </form>
-          <div class="modal__overlay modal__overlay--loading">
-            <i class="fas fa-spinner"></i>
-          </div>
-          <div class="modal__overlay modal__overlay--success">
-            Thanks for the message! Looking forward to speaking with you soon!!
-          </div>
-        </div>
-      </div>
-      <img src="./assets/semi circle.svg" class="shape shape--0" alt="" />
-      <img src="./assets/circle.svg" class="shape shape--1" alt="" />
-      <img src="./assets/squiggly.svg" class="shape shape--2" alt="" />
-      <img src="./assets/semi circle.svg" class="shape shape--3" alt="" />
-      <img src="./assets/circle.svg" class="shape shape--4" alt="" />
-      <img src="./assets/triangle.svg" class="shape shape--5" alt="" />
-      <img src="./assets/circle.svg" class="shape shape--6" alt="" />
-      <img src="./assets/squiggly.svg" class="shape shape--7" alt="" />
-      <img src="./assets/semi circle.svg" class="shape shape--8" alt="" />
-      <img src="./assets/circle.svg" class="shape shape--9" alt="" />
+
+      <a href="#about" class="scroll"><div class="scroll__icon"></div></a>
+
+      <div class="shape shape--0"></div>
+      <div class="shape shape--1"></div>
+      <div class="shape shape--2"></div>
+      <div class="shape shape--3"></div>
+      <div class="shape shape--4"></div>
+
+      <button class="mail__btn" onclick="toggleModal()"><i class="fas fa-envelope"></i></button>
     </section>
-    <section id="languages">
+
+    <section id="about" class="section section--light">
       <div class="container">
-        <div class="row">
-          <h1 class="section__title">
-            This is my <span class="text--purple">technology stack</span>
-          </h1>
-          <div class="language__list">
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/38/HTML5_Badge.svg/240px-HTML5_Badge.svg.png"
-                  alt="Html Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">HTML</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/css-131-722685.png"
-                  alt="CSS Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">CSS</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/javascript-1-225993.png"
-                  alt="JavaScript Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">JavaScript</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/typescript-3521774-2945272.png"
-                  alt="TypeScript Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">TypeScript</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/vue-282497.png"
-                  alt="Vue Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">Vue</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/nuxt-dot-js-3628959-3030184.png"
-                  alt="Nuxt Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">Nuxt</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://cdn.iconscout.com/icon/free/png-256/react-3-1175109.png"
-                  alt="React Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">React</span>
-            </div>
-            <div class="language">
-              <figure class="language__img--wrapper">
-                <img
-                  src="https://mobx.js.org/img/mobx.png"
-                  alt="MobX Logo"
-                  class="language__img"
-                />
-              </figure>
-              <span class="language__name">MobX</span>
-            </div>
-          </div>
+        <h2 class="section__title">About me</h2>
+        <p class="section__lead">
+          I'm a Computer Science student at UTS with production-level experience in React and modern JavaScript.
+          I enjoy turning rough product ideas into polished interfaces with strong UX fundamentals.
+        </p>
+        <div class="cards">
+          <article class="card">
+            <h3>Frontend Craft</h3>
+            <p>Accessible, responsive, animated UIs built with attention to typography, spacing, and visual hierarchy.</p>
+          </article>
+          <article class="card">
+            <h3>Tech Stack</h3>
+            <p>React, TypeScript, JavaScript, CSS, Vue, Nuxt, and API integration for dynamic data-heavy products.</p>
+          </article>
+          <article class="card">
+            <h3>Mindset</h3>
+            <p>I care about velocity and quality: reusable components, clean code, and iterative delivery.</p>
+          </article>
         </div>
       </div>
     </section>
-    <section id="projects">
+
+    <section id="projects" class="section">
       <div class="container">
-        <div class="row">
-          <h1 class="section__title">
-            Here are some of my <span class="lightblue">projects</span>
-          </h1>
-          <ul class="project__list">
-            <li class="project">
-              <div class="project__wrapper">
-                <img
-                  src="./assets/NFT.png"
-                  class="project__image"
-                  alt="NFT Market Image"
-                />
-                <div class="project__wrapper--background"></div>
-                <div class="project__description">
-                  <h3 class="project__description--title">
-                    NFT Market
-                  </h3>
-                  <h4 class="project__description--sub-title">
-                    React JS, JavaScript, API Dynamic routing, and Styled Components
-                  </h4>
-                  <p class="project__description--paragraph">
-                    NFT Market is a fully dynamic Full-Stack NFT marketplace built with React JS, JavaScript, API Dynamic routing, and Styled Components. 
-                    This is a massive project that retrieves data from numerous backdoor APIs and it is routed using React. 
-                    Using Skeleton Loading and also using advanced transitions and scrolling carousels, 
-                    it makes it very responsive on all devices and smooth navigation along with a Countdown timer for all NFT items that is dynamically installed. 
-                    The project is fully responsive, and it is hosted on Vercel.
-                  </p>
-                  <div class="project__description--links">
-                    <a
-                      href="https://github.com/CharlieH7/NFT-Market"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fab fa-github"></i>
-                    </a>
-                    <a
-                      href="https://nft-marketplace-charlieh7.vercel.app/"
-                      target="_blank"
-                      class="project__description--link"
-                    >
-                      <i class="fas fa-link"></i>
-                    </a>
-                  </div>
-                </div>
-                <li class="project">
-                  <div class="project__wrapper">
-                    <img
-                      src="./assets/bookstore.png"
-                      class="project__image"
-                      alt="Library Book Store Image"
-                    />
-                    <div class="project__wrapper--background"></div>
-                    <div class="project__description">
-                      <h3 class="project__description--title">
-                        Library Book Store
-                      </h3>
-                      <h4 class="project__description--sub-title">
-                        React.js
-                      </h4>
-                      <p class="project__description--paragraph">
-                        It is an online book store that acts almost like Amazon
-                        does on their website by being able to put stuff in
-                        carts, add how many you want and get the accurate price.
-                        By building this app, it shows off my ability to be able
-                        to build E-Commerce websites and store websites that
-                        many people value. This is also a big project that
-                        helped me learn so many new and cool things about
-                        Front-End Development and just how fun it truly is
-                      </p>
-                      <div class="project__description--links">
-                        <a
-                          href="https://github.com/CharlieH7/Library-Book-Store"
-                          target="_blank"
-                          class="project__description--link"
-                        >
-                          <i class="fab fa-github"></i>
-                        </a>
-                        <a
-                          href="https://library-book-store-ffvxfsr79-charlieh7.vercel.app/"
-                          target="_blank"
-                          class="project__description--link"
-                        >
-                          <i class="fas fa-link"></i>
-                        </a>
-                      </div>
-                    </div>
-                    <li class="project">
-                      <div class="project__wrapper">
-                        <img
-                          src="./assets/grocery.png"
-                          class="project__image"
-                          alt="Grocery Website"
-                        />
-                        <div class="project__wrapper--background"></div>
-                        <div class="project__description">
-                          <h3 class="project__description--title">
-                            Grocery Website
-                          </h3>
-                          <h4 class="project__description--sub-title">
-                            HTML, CSS, JavaScript, PHP, AWS Elastic Beanstalk
-                          </h4>
-                          <p class="project__description--paragraph">
-                            E-commerce Website. A website that allows people to
-                            buy and search products in a simulated supermarket
-                            and place orders
-                          </p>
-                          <div class="project__description--links">
-                            <a
-                              href="https://github.com/CharlieH7/Grocery-Website"
-                              target="_blank"
-                              class="project__description--link"
-                            >
-                              <i class="fab fa-github"></i>
-                            </a>
-                            <a
-                              href="https://charlieh7.github.io/Online-Grocery-Store-Web-Application/"
-                              target="_blank"
-                              class="project__description--link"
-                            >
-                              <i class="fas fa-link"></i>
-                            </a>
-                          </div>
-                        </div>
-                        <li class="last-project">
-                          <div class="project__wrapper">
-                            <img
-                              src="./assets/car-rental.png"
-                              class="project__image"
-                              alt="Car Rental Image"
-                            />
-                            <div class="project__wrapper--background"></div>
-                            <div class="project__description">
-                              <h3 class="project__description--title">
-                                Car Rental Projects
-                              </h3>
-                              <h4 class="project__description--sub-title">
-                                HTML, CSS, JavaScript, PHP, MySQL, AJAX, JSON,
-                                JQuery, AWS Elastic Beanstalk
-                              </h4>
-                              <p class="project__description--paragraph">
-                                A simplified online business portal (website)
-                                for a Car Rental Company: “Hertz-UTS”. The
-                                website is a simulated online car rental system
-                                that aims to offer users a streamline browsing
-                                and operation experience
-                              </p>
-                              <div class="project__description--links">
-                                <a
-                                  href="https://github.com/CharlieH7/Online-Car-Rental-System"
-                                  target="_blank"
-                                  class="project__description--link"
-                                >
-                                  <i class="fab fa-github"></i>
-                                </a>
-                                <a
-                                  href="https://charlieh7.github.io/Online-Car-Rental-System/"
-                                  target="_blank"
-                                  class="project__description--link"
-                                >
-                                  <i class="fas fa-link"></i>
-                                </a>
-                              </div>
-                            </div>
-                          </div>
-                        </li>
-                      </div>
-                    </li>
-                  </div>
-                </li>
+        <h2 class="section__title">Featured projects</h2>
+        <div class="project-grid">
+          <article class="project">
+            <img src="./assets/NFT.png" class="project__image" alt="NFT Market project" />
+            <div class="project__content">
+              <h3>NFT Market</h3>
+              <p>Dynamic marketplace with API-powered routing, skeleton loading, and polished micro-interactions.</p>
+              <div class="project__links">
+                <a href="https://github.com/CharlieH7/NFT-Market" target="_blank">Code</a>
+                <a href="https://nft-marketplace-charlieh7.vercel.app/" target="_blank">Live</a>
               </div>
-            </li>
-          </ul>
+            </div>
+          </article>
+          <article class="project">
+            <img src="./assets/bookstore.png" class="project__image" alt="Library Book Store project" />
+            <div class="project__content">
+              <h3>Library Book Store</h3>
+              <p>E-commerce experience with cart logic, filtering, and a conversion-focused product browsing flow.</p>
+              <div class="project__links">
+                <a href="https://github.com/CharlieH7/Library-Book-Store" target="_blank">Code</a>
+                <a href="https://library-book-store-ffvxfsr79-charlieh7.vercel.app/" target="_blank">Live</a>
+              </div>
+            </div>
+          </article>
+          <article class="project">
+            <img src="./assets/grocery.png" class="project__image" alt="Grocery Website project" />
+            <div class="project__content">
+              <h3>Grocery Web App</h3>
+              <p>Simulated online supermarket with product search, order placement, and practical full-stack integration.</p>
+              <div class="project__links">
+                <a href="https://github.com/CharlieH7/Grocery-Website" target="_blank">Code</a>
+                <a href="https://charlieh7.github.io/Online-Grocery-Store-Web-Application/" target="_blank">Live</a>
+              </div>
+            </div>
+          </article>
         </div>
       </div>
     </section>
+
     <footer>
-      <div class="container">
-        <div class="row footer__row">
-          <figure>
-            <img class="footer__logo--image" src="./assets/CH.svg" alt="" />
-          </figure>
-          <div class="footer__social--list">
-            <a
-              href="https://github.com/CharlieH7"
-              target="_blank"
-              class="footer__social--link link__hover-effect link__hover-effect--white"
-            >
-              GitHub
-            </a>
-            <a
-              href="https://www.linkedin.com/in/pin-hsun-huang/"
-              target="_blank"
-              class="footer__social--link link__hover-effect link__hover-effect--white"
-            >
-              LinkedIn
-            </a>
-            <a
-              onclick="toggleModal()"
-              href="#"
-              class="footer__social--link link__hover-effect link__hover-effect--white"
-            >
-              Contact
-            </a>
-            <a
-              href="./assets/Resume.pdf"
-              target="_blank"
-              class="footer__social--link link__hover-effect link__hover-effect--white"
-            >
-              Resume
-            </a>
-          </div>
-          <div class="footer__copyright">
-            Copyright © <span id="year"></span> Charlie Huang
-          </div>
+      <div class="container footer__row">
+        <img class="footer__logo--image" src="./assets/ch.svg" alt="Charlie logo" />
+        <div class="footer__social--list">
+          <a href="https://github.com/CharlieH7" target="_blank">GitHub</a>
+          <a href="https://www.linkedin.com/in/pin-hsun-huang/" target="_blank">LinkedIn</a>
+          <a href="#" onclick="toggleModal()">Contact</a>
+          <a href="./assets/Resume.pdf" target="_blank">Resume</a>
         </div>
+        <div class="footer__copyright">Copyright © <span id="year"></span> Charlie Huang</div>
       </div>
     </footer>
-    <button id="back-to-top-button" onclick="scrollToTop()">
-      <i class="fas fa-chevron-up"></i>
-    </button>
+
+    <div class="modal">
+      <div class="modal__half modal__about">
+        <h3 class="modal__title">Let's build something great.</h3>
+        <p class="modal__paragraph">
+          I'm currently open to frontend roles and freelance work. If you're looking for someone who can ship polished web experiences fast, send me a message.
+        </p>
+      </div>
+      <div class="modal__half modal__contact">
+        <i class="fas fa-times modal__exit" onclick="toggleModal()"></i>
+        <h3 class="modal__title">Get in touch</h3>
+        <form id="contact__form" onsubmit="contact(event)">
+          <div class="form__item">
+            <label>Name</label>
+            <input class="input" name="user_name" type="text" required />
+          </div>
+          <div class="form__item">
+            <label>Email</label>
+            <input class="input" name="user_email" type="email" required />
+          </div>
+          <div class="form__item">
+            <label>Message</label>
+            <textarea class="input" name="message" required></textarea>
+          </div>
+          <button id="contact__submit" class="form__submit">Send message</button>
+        </form>
+        <div class="modal__overlay modal__overlay--loading"><i class="fas fa-spinner"></i></div>
+        <div class="modal__overlay modal__overlay--success">Thanks for the message! I will get back to you soon.</div>
+      </div>
+    </div>
+
+    <button id="back-to-top-button" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
   </body>
 </html>
