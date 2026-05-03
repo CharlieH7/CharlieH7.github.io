@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/ch.svg" />
     <script src="https://kit.fontawesome.com/f6cc9abe5a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="index.js" defer></script>
+    <script type="module" src="index.js"></script>
     <script>
       (function () {
         emailjs.init("i4Ysn7FwxaL2UqEMV");
@@ -16,7 +16,7 @@
     </script>
   </head>
   <body>
-    <section id="landing-page" onmousemove="moveBackground(event)">
+    <section id="landing-page">
       <nav class="nav">
         <a href="#landing-page" class="logo-wrap">
           <img id="personal-logo" src="./assets/ch.svg" alt="Charlie logo" />
@@ -32,6 +32,14 @@
           </li>
         </ul>
       </nav>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div id="hero-canvas"></div>
+        <div class="hero-visual__fallback">
+          <span class="fallback-glow fallback-glow--one"></span>
+          <span class="fallback-glow fallback-glow--two"></span>
+        </div>
+      </div>
 
       <header class="hero header">
         <p class="eyebrow">Software Engineer · Sydney</p>
