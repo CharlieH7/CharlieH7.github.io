@@ -29,6 +29,53 @@ function moveBackground(event) {
   });
 }
 
+function initProjectCards() {
+  const projectCards = document.querySelectorAll("[data-project]");
+  if (!projectCards.length) return;
+
+  const revealObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        if (!entry.isIntersecting) return;
+        const delay = Number(entry.target.dataset.delay || 0);
+        entry.target.style.transitionDelay = `${delay}ms`;
+        entry.target.classList.add("is-visible");
+        revealObserver.unobserve(entry.target);
+      });
+    },
+    { threshold: 0.2 }
+  );
+
+  const activeObserver = new IntersectionObserver(
+    (entries) => {
+      entries.forEach((entry) => {
+        entry.target.classList.toggle("is-active", entry.isIntersecting);
+      });
+    },
+    { threshold: 0.6 }
+  );
+
+  projectCards.forEach((card, index) => {
+    card.dataset.delay = String(index * 120);
+    revealObserver.observe(card);
+    activeObserver.observe(card);
+
+    card.addEventListener("mousemove", (event) => {
+      const rect = card.getBoundingClientRect();
+      const x = event.clientX - rect.left;
+      const y = event.clientY - rect.top;
+      const rotateY = ((x / rect.width) - 0.5) * 8;
+      const rotateX = (0.5 - (y / rect.height)) * 8;
+
+      card.style.transform = `perspective(900px) rotateX(${rotateX.toFixed(2)}deg) rotateY(${rotateY.toFixed(2)}deg) translateY(-2px)`;
+      card.style.boxShadow = `${-rotateY * 1.5}px ${14 + rotateX * 1.5}px 60px rgba(40, 71, 150, 0.34)`;
+    });
+
+    card.addEventListener("mouseleave", () => {
+      card.style.transform = "";
+      card.style.boxShadow = "";
+    });
+  });
 function initHeroVisual() {
   const canvasMount = document.getElementById("hero-canvas");
   if (!canvasMount) return;
@@ -141,6 +188,7 @@ function scrollToTop() {
   window.scrollTo({ top: 0, behavior: "smooth" });
 }
 
+initProjectCards();
 window.toggleContrast = toggleContrast;
 window.contact = contact;
 window.toggleModal = toggleModal;
