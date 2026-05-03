@@ -8,7 +8,7 @@
     <link rel="icon" type="image/x-icon" href="./assets/ch.svg" />
     <script src="https://kit.fontawesome.com/f6cc9abe5a.js" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="index.js" defer></script>
+    <script type="module" src="index.js"></script>
     <script>
       (function () {
         emailjs.init("i4Ysn7FwxaL2UqEMV");
@@ -16,7 +16,7 @@
     </script>
   </head>
   <body>
-    <section id="landing-page" onmousemove="moveBackground(event)">
+    <section id="landing-page">
       <nav class="nav">
         <a href="#landing-page" class="logo-wrap">
           <img id="personal-logo" src="./assets/ch.svg" alt="Charlie logo" />
@@ -24,7 +24,7 @@
         <ul class="nav__link--list">
           <li><a href="#about" class="nav__link--anchor">About</a></li>
           <li><a href="#projects" class="nav__link--anchor">Projects</a></li>
-          <li><a href="#" class="nav__link--anchor" onclick="toggleModal()">Contact</a></li>
+          <li><button type="button" class="nav__link--anchor nav__link--button" onclick="toggleModal()">Contact</button></li>
           <li>
             <button class="theme-toggle" onclick="toggleContrast()" aria-label="Toggle theme">
               <i class="fas fa-adjust"></i>
@@ -32,6 +32,14 @@
           </li>
         </ul>
       </nav>
+
+      <div class="hero-visual" aria-hidden="true">
+        <div id="hero-canvas"></div>
+        <div class="hero-visual__fallback">
+          <span class="fallback-glow fallback-glow--one"></span>
+          <span class="fallback-glow fallback-glow--two"></span>
+        </div>
+      </div>
 
       <header class="hero header">
         <p class="eyebrow">Software Engineer · Sydney</p>
@@ -90,36 +98,54 @@
       <div class="container">
         <h2 class="section__title">Featured projects</h2>
         <div class="project-grid">
-          <article class="project">
-            <img src="./assets/NFT.png" class="project__image" alt="NFT Market project" />
+          <article class="project project--reveal" data-project>
+            <div class="project__media">
+              <img src="./assets/NFT.png" class="project__image" alt="NFT Market project" />
+            </div>
             <div class="project__content">
               <h3>NFT Market</h3>
               <p>Dynamic marketplace with API-powered routing, skeleton loading, and polished micro-interactions.</p>
+              <div class="project__chips">
+                <span class="project__chip">React</span><span class="project__chip">TypeScript</span><span class="project__chip">API</span>
+              </div>
               <div class="project__links">
-                <a href="https://github.com/CharlieH7/NFT-Market" target="_blank">Code</a>
-                <a href="https://nft-marketplace-charlieh7.vercel.app/" target="_blank">Live</a>
+                <a href="https://nft-marketplace-charlieh7.vercel.app/" target="_blank" class="project__cta project__cta--live">View Live</a>
+                <a href="https://nft-marketplace-charlieh7.vercel.app/" target="_blank" class="project__cta project__cta--case">Case Study</a>
+                <a href="https://github.com/CharlieH7/NFT-Market" target="_blank" class="project__cta project__cta--source">Source</a>
               </div>
             </div>
           </article>
-          <article class="project">
-            <img src="./assets/bookstore.png" class="project__image" alt="Library Book Store project" />
+          <article class="project project--reveal" data-project>
+            <div class="project__media">
+              <img src="./assets/bookstore.png" class="project__image" alt="Library Book Store project" />
+            </div>
             <div class="project__content">
               <h3>Library Book Store</h3>
               <p>E-commerce experience with cart logic, filtering, and a conversion-focused product browsing flow.</p>
+              <div class="project__chips">
+                <span class="project__chip">React</span><span class="project__chip">TypeScript</span><span class="project__chip">API</span>
+              </div>
               <div class="project__links">
-                <a href="https://github.com/CharlieH7/Library-Book-Store" target="_blank">Code</a>
-                <a href="https://library-book-store-ffvxfsr79-charlieh7.vercel.app/" target="_blank">Live</a>
+                <a href="https://library-book-store-ffvxfsr79-charlieh7.vercel.app/" target="_blank" class="project__cta project__cta--live">View Live</a>
+                <a href="https://library-book-store-ffvxfsr79-charlieh7.vercel.app/" target="_blank" class="project__cta project__cta--case">Case Study</a>
+                <a href="https://github.com/CharlieH7/Library-Book-Store" target="_blank" class="project__cta project__cta--source">Source</a>
               </div>
             </div>
           </article>
-          <article class="project">
-            <img src="./assets/grocery.png" class="project__image" alt="Grocery Website project" />
+          <article class="project project--reveal" data-project>
+            <div class="project__media">
+              <img src="./assets/grocery.png" class="project__image" alt="Grocery Website project" />
+            </div>
             <div class="project__content">
               <h3>Grocery Web App</h3>
               <p>Simulated online supermarket with product search, order placement, and practical full-stack integration.</p>
+              <div class="project__chips">
+                <span class="project__chip">React</span><span class="project__chip">TypeScript</span><span class="project__chip">API</span>
+              </div>
               <div class="project__links">
-                <a href="https://github.com/CharlieH7/Grocery-Website" target="_blank">Code</a>
-                <a href="https://charlieh7.github.io/Online-Grocery-Store-Web-Application/" target="_blank">Live</a>
+                <a href="https://charlieh7.github.io/Online-Grocery-Store-Web-Application/" target="_blank" class="project__cta project__cta--live">View Live</a>
+                <a href="https://charlieh7.github.io/Online-Grocery-Store-Web-Application/" target="_blank" class="project__cta project__cta--case">Case Study</a>
+                <a href="https://github.com/CharlieH7/Grocery-Website" target="_blank" class="project__cta project__cta--source">Source</a>
               </div>
             </div>
           </article>
@@ -133,41 +159,43 @@
         <div class="footer__social--list">
           <a href="https://github.com/CharlieH7" target="_blank">GitHub</a>
           <a href="https://www.linkedin.com/in/pin-hsun-huang/" target="_blank">LinkedIn</a>
-          <a href="#" onclick="toggleModal()">Contact</a>
+          <button type="button" class="footer__contact" onclick="toggleModal()">Contact</button>
           <a href="./assets/Resume.pdf" target="_blank">Resume</a>
         </div>
         <div class="footer__copyright">Copyright © <span id="year"></span> Charlie Huang</div>
       </div>
     </footer>
 
-    <div class="modal">
-      <div class="modal__half modal__about">
-        <h3 class="modal__title">Let's build something great.</h3>
+    <div class="modal" id="contact-modal" role="dialog" aria-modal="true" aria-labelledby="contact-title" aria-hidden="true">
+      <button type="button" class="modal__overlay" aria-label="Close contact panel" onclick="toggleModal()"></button>
+      <aside class="modal__panel" role="document" tabindex="-1">
+        <button type="button" class="modal__close" aria-label="Close contact panel" onclick="toggleModal()">
+          <i class="fas fa-times"></i>
+        </button>
+        <h3 class="modal__title" id="contact-title">Get in touch</h3>
         <p class="modal__paragraph">
           I'm currently open to frontend roles and freelance work. If you're looking for someone who can ship polished web experiences fast, send me a message.
         </p>
-      </div>
-      <div class="modal__half modal__contact">
-        <i class="fas fa-times modal__exit" onclick="toggleModal()"></i>
-        <h3 class="modal__title">Get in touch</h3>
         <form id="contact__form" onsubmit="contact(event)">
           <div class="form__item">
-            <label>Name</label>
-            <input class="input" name="user_name" type="text" required />
+            <label for="contact-name">Name</label>
+            <input id="contact-name" class="input" name="user_name" type="text" required />
           </div>
           <div class="form__item">
-            <label>Email</label>
-            <input class="input" name="user_email" type="email" required />
+            <label for="contact-email">Email</label>
+            <input id="contact-email" class="input" name="user_email" type="email" required />
           </div>
           <div class="form__item">
-            <label>Message</label>
-            <textarea class="input" name="message" required></textarea>
+            <label for="contact-message">Message</label>
+            <textarea id="contact-message" class="input" name="message" required></textarea>
           </div>
-          <button id="contact__submit" class="form__submit">Send message</button>
+          <button id="contact__submit" class="form__submit" type="submit">
+            <span class="form__submit-text">Send message</span>
+            <span class="form__submit-spinner" aria-hidden="true"><i class="fas fa-spinner"></i></span>
+          </button>
+          <p id="form-status" class="form__status" aria-live="polite"></p>
         </form>
-        <div class="modal__overlay modal__overlay--loading"><i class="fas fa-spinner"></i></div>
-        <div class="modal__overlay modal__overlay--success">Thanks for the message! I will get back to you soon.</div>
-      </div>
+      </aside>
     </div>
 
     <button id="back-to-top-button" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
