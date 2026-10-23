@@ -1,175 +1,53 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Charlie Huang | Frontend Engineer</title>
-    <link rel="stylesheet" href="./style.css" />
-    <link rel="icon" type="image/x-icon" href="./assets/ch.svg" />
-    <script src="https://kit.fontawesome.com/f6cc9abe5a.js" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-    <script src="index.js" defer></script>
-    <script>
-      (function () {
-        emailjs.init("i4Ysn7FwxaL2UqEMV");
-      })();
-    </script>
-  </head>
-  <body>
-    <section id="landing-page" onmousemove="moveBackground(event)">
-      <nav class="nav">
-        <a href="#landing-page" class="logo-wrap">
-          <img id="personal-logo" src="./assets/ch.svg" alt="Charlie logo" />
-        </a>
-        <ul class="nav__link--list">
-          <li><a href="#about" class="nav__link--anchor">About</a></li>
-          <li><a href="#projects" class="nav__link--anchor">Projects</a></li>
-          <li><a href="#" class="nav__link--anchor" onclick="toggleModal()">Contact</a></li>
-          <li>
-            <button class="theme-toggle" onclick="toggleContrast()" aria-label="Toggle theme">
-              <i class="fas fa-adjust"></i>
-            </button>
-          </li>
-        </ul>
-      </nav>
-
-      <header class="hero header">
-        <p class="eyebrow">Frontend Software Engineer · Sydney</p>
-        <h1>Hey, I'm <span class="lightblue">Charlie Huang</span>.</h1>
-        <p class="hero__para">
-          I design and build clean, high-performing web experiences that feel premium and convert.
-          I focus on animation, clarity, and frontend architecture that scales.
-        </p>
-        <div class="hero__actions">
-          <a href="#projects" class="btn btn--primary">View Projects</a>
-          <button class="btn btn--ghost" onclick="toggleModal()">Let's work together</button>
-        </div>
-        <div class="social__list">
-          <a href="https://www.linkedin.com/in/charliephhuang/" target="_blank" class="social__link"><i class="fa-brands fa-linkedin"></i></a>
-          <a href="https://github.com/CharlieH7" target="_blank" class="social__link"><i class="fa-brands fa-github"></i></a>
-          <a href="./assets/Resume.pdf" target="_blank" class="social__link"><i class="fas fa-file-pdf"></i></a>
-        </div>
-      </header>
-
-      <a href="#about" class="scroll"><div class="scroll__icon"></div></a>
-
-      <div class="shape shape--0"></div>
-      <div class="shape shape--1"></div>
-      <div class="shape shape--2"></div>
-      <div class="shape shape--3"></div>
-      <div class="shape shape--4"></div>
-
-      <button class="mail__btn" onclick="toggleModal()"><i class="fas fa-envelope"></i></button>
-    </section>
-
-    <section id="about" class="section section--light">
-      <div class="container">
-        <h2 class="section__title">About me</h2>
-        <p class="section__lead">
-          I'm a Computer Science student at UTS with production-level experience in React and modern JavaScript.
-          I enjoy turning rough product ideas into polished interfaces with strong UX fundamentals.
-        </p>
-        <div class="cards">
-          <article class="card">
-            <h3>Frontend Craft</h3>
-            <p>Accessible, responsive, animated UIs built with attention to typography, spacing, and visual hierarchy.</p>
-          </article>
-          <article class="card">
-            <h3>Tech Stack</h3>
-            <p>React, TypeScript, JavaScript, CSS, Vue, Nuxt, and API integration for dynamic data-heavy products.</p>
-          </article>
-          <article class="card">
-            <h3>Mindset</h3>
-            <p>I care about velocity and quality: reusable components, clean code, and iterative delivery.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section id="projects" class="section">
-      <div class="container">
-        <h2 class="section__title">Featured projects</h2>
-        <div class="project-grid">
-          <article class="project">
-            <img src="./assets/NFT.png" class="project__image" alt="NFT Market project" />
-            <div class="project__content">
-              <h3>NFT Market</h3>
-              <p>Dynamic marketplace with API-powered routing, skeleton loading, and polished micro-interactions.</p>
-              <div class="project__links">
-                <a href="https://github.com/CharlieH7/NFT-Market" target="_blank">Code</a>
-                <a href="https://nft-marketplace-charlieh7.vercel.app/" target="_blank">Live</a>
-              </div>
-            </div>
-          </article>
-          <article class="project">
-            <img src="./assets/bookstore.png" class="project__image" alt="Library Book Store project" />
-            <div class="project__content">
-              <h3>Library Book Store</h3>
-              <p>E-commerce experience with cart logic, filtering, and a conversion-focused product browsing flow.</p>
-              <div class="project__links">
-                <a href="https://github.com/CharlieH7/Library-Book-Store" target="_blank">Code</a>
-                <a href="https://library-book-store-ffvxfsr79-charlieh7.vercel.app/" target="_blank">Live</a>
-              </div>
-            </div>
-          </article>
-          <article class="project">
-            <img src="./assets/grocery.png" class="project__image" alt="Grocery Website project" />
-            <div class="project__content">
-              <h3>Grocery Web App</h3>
-              <p>Simulated online supermarket with product search, order placement, and practical full-stack integration.</p>
-              <div class="project__links">
-                <a href="https://github.com/CharlieH7/Grocery-Website" target="_blank">Code</a>
-                <a href="https://charlieh7.github.io/Online-Grocery-Store-Web-Application/" target="_blank">Live</a>
-              </div>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <footer>
-      <div class="container footer__row">
-        <img class="footer__logo--image" src="./assets/ch.svg" alt="Charlie logo" />
-        <div class="footer__social--list">
-          <a href="https://github.com/CharlieH7" target="_blank">GitHub</a>
-          <a href="https://www.linkedin.com/in/pin-hsun-huang/" target="_blank">LinkedIn</a>
-          <a href="#" onclick="toggleModal()">Contact</a>
-          <a href="./assets/Resume.pdf" target="_blank">Resume</a>
-        </div>
-        <div class="footer__copyright">Copyright © <span id="year"></span> Charlie Huang</div>
-      </div>
-    </footer>
-
-    <div class="modal">
-      <div class="modal__half modal__about">
-        <h3 class="modal__title">Let's build something great.</h3>
-        <p class="modal__paragraph">
-          I'm currently open to frontend roles and freelance work. If you're looking for someone who can ship polished web experiences fast, send me a message.
-        </p>
-      </div>
-      <div class="modal__half modal__contact">
-        <i class="fas fa-times modal__exit" onclick="toggleModal()"></i>
-        <h3 class="modal__title">Get in touch</h3>
-        <form id="contact__form" onsubmit="contact(event)">
-          <div class="form__item">
-            <label>Name</label>
-            <input class="input" name="user_name" type="text" required />
-          </div>
-          <div class="form__item">
-            <label>Email</label>
-            <input class="input" name="user_email" type="email" required />
-          </div>
-          <div class="form__item">
-            <label>Message</label>
-            <textarea class="input" name="message" required></textarea>
-          </div>
-          <button id="contact__submit" class="form__submit">Send message</button>
-        </form>
-        <div class="modal__overlay modal__overlay--loading"><i class="fas fa-spinner"></i></div>
-        <div class="modal__overlay modal__overlay--success">Thanks for the message! I will get back to you soon.</div>
-      </div>
-    </div>
-
-    <button id="back-to-top-button" onclick="scrollToTop()"><i class="fas fa-chevron-up"></i></button>
-  </body>
-</html>
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="description" content="Charlie Huang — Sydney-based software developer and support engineer. Full-stack development, automation, application support and infrastructure.">
+<title>Charlie Huang | Software Development & Application Support</title>
+<link rel="icon" href="./assets/ch.svg" type="image/svg+xml"><link rel="stylesheet" href="./style.css"><script src="./index.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<header class="site-header"><nav class="wrap nav" aria-label="Main navigation">
+<a class="brand" href="#top"><span class="brand-icon">CH</span><span>Charlie Huang<span class="brand-dot">.</span></span></a>
+<div class="nav-links"><a href="#work">Work</a><a href="#experience">Experience</a><a href="#about">About</a><a href="#contact">Contact</a></div>
+<a class="nav-resume" href="./assets/Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a>
+</nav></header>
+<main id="main">
+<section class="hero wrap" id="top">
+<div class="hero-copy">
+<div class="availability"><span class="pulse"></span> SYDNEY, AUSTRALIA <span class="line"></span> OPEN TO OPPORTUNITIES</div>
+<p class="eyebrow">SOFTWARE DEVELOPMENT · APPLICATION SUPPORT · AUTOMATION</p>
+<h1>Engineering solutions.<br><em>Supporting people.</em></h1>
+<p class="intro">I'm <strong>Charlie Huang</strong>, a Computing Science (Honours) graduate and Support Engineer. I build practical software, streamline business operations and troubleshoot the systems people depend on.</p>
+<div class="actions"><a class="button primary" href="#work">Explore my work <span>↗</span></a><a class="button outline" href="#contact">Get in touch <span>→</span></a></div>
+<div class="socials"><a href="https://github.com/CharlieH7" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/charliephhuang/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="./assets/Resume.pdf" target="_blank" rel="noopener">Download CV ↗</a></div>
+</div>
+<div class="hero-panel" aria-label="Professional focus areas">
+<div class="panel-top"><span>WHAT I DO</span><span class="panel-status">● BUILD / SUPPORT</span></div>
+<div class="panel-item"><span class="number">01</span><div><h3>Develop software</h3><p>Web applications, APIs and internal tools</p></div><span class="arrow">↗</span></div>
+<div class="panel-item"><span class="number">02</span><div><h3>Support production systems</h3><p>Incident investigation, Jira and remote support</p></div><span class="arrow">↗</span></div>
+<div class="panel-item"><span class="number">03</span><div><h3>Improve workflows</h3><p>Automation that reduces repetitive work</p></div><span class="arrow">↗</span></div>
+<div class="panel-bottom">Real systems. Real users. Measurable impact.</div>
+</div>
+</section>
+<div class="ticker"><div class="wrap ticker-inner"><span>FULL-STACK DEVELOPMENT</span><span>•</span><span>TECHNICAL SUPPORT</span><span>•</span><span>BUSINESS AUTOMATION</span><span>•</span><span>SYSTEM ADMINISTRATION</span></div></div>
+<section class="section wrap" id="work"><div class="section-heading"><div><p class="kicker">01 / SELECTED WORK</p><h2>Projects with <em>purpose.</em></h2></div><p class="section-aside">Commercial projects and engineering work focused on solving operational challenges.</p></div>
+<div class="work-grid">
+<article class="work-card feature"><div class="work-art art-wordpress"><div class="art-label">COMMERCIAL WEBSITE</div><div class="big-type">ticketless<span>parking</span><small>.com</small></div><div class="art-footer">WEB PRESENCE / CONTENT OPERATIONS <span>↗</span></div></div><div class="work-body"><div class="card-meta">01 — WORDPRESS · WEBSITE OPERATIONS</div><h3>Ticketless Parking Corporate Website</h3><p>Helped build the company website and now manage ongoing content and page updates as the primary website editor.</p><a href="https://ticketlessparking.com" target="_blank" rel="noopener" class="text-link">Visit website ↗</a></div></article>
+<article class="work-card"><div class="work-art art-proposal"><div class="art-label">INTERNAL AUTOMATION</div><div class="mock-window"><div class="mock-dots"><i></i><i></i><i></i></div><div class="mock-line wide"></div><div class="mock-line"></div><div class="mock-line short"></div><div class="mock-action">GENERATE PDF ↗</div></div><span class="art-metric">60%+ <small>less preparation time</small></span></div><div class="work-body"><div class="card-meta">02 — APPS SCRIPT · HTML/CSS · PUPPETEER</div><h3>PDF Proposal Generator</h3><p>Built a guided workflow that automates sales proposal creation and reduces manual document preparation by more than 60%.</p><span class="private-label">Internal company project · Case study available on request</span></div></article>
+<article class="work-card"><div class="work-art art-booking"><div class="art-label">FULL-STACK APPLICATION</div><div class="booking-visual"><div class="booking-icon">P</div><div class="booking-bars"><span></span><span></span><span></span></div><div class="booking-pill">BOOKING CONFIRMED ✓</div></div></div><div class="work-body"><div class="card-meta">03 — NEXT.JS · NODE.JS · POSTGRESQL</div><h3>Parking Booking & Payment Portal</h3><p>Developed booking and payment workflows, multi-location configuration and validation logic for a full-stack car park platform.</p><span class="private-label">Selected architecture and implementation details</span></div></article>
+<article class="work-card"><div class="work-art art-qr"><div class="art-label">OPERATIONAL TOOLING</div><div class="qr-visual"><div class="qr-grid"><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span><span></span></div><div class="qr-text">SCAN → VERIFY → SAVE</div></div><span class="art-metric">70% <small>less data entry time</small></span></div><div class="work-body"><div class="card-meta">04 — TYPESCRIPT · FIREBASE</div><h3>Warehouse QR Scanning Tool</h3><p>Built a QR-driven workflow to simplify warehouse data capture and cut repetitive manual entry by approximately 70%.</p><span class="private-label">Internal company project · Case study available on request</span></div></article>
+</div>
+<div class="archive"><div><h3>Earlier web projects</h3><p>Selected frontend experiments and learning projects.</p></div><div class="archive-links"><a href="https://github.com/CharlieH7/NFT-Market" target="_blank" rel="noopener">NFT Market ↗</a><a href="https://github.com/CharlieH7/Library-Book-Store" target="_blank" rel="noopener">Book Store ↗</a><a href="https://github.com/CharlieH7/Grocery-Website" target="_blank" rel="noopener">Grocery App ↗</a></div></div>
+</section>
+<section class="section experience-section" id="experience"><div class="wrap"><div class="section-heading"><div><p class="kicker">02 / PROFESSIONAL EXPERIENCE</p><h2>From issue to <em>resolution.</em></h2></div><p class="section-aside">A hybrid background connecting software, infrastructure and customer-facing operations.</p></div>
+<div class="experience-list">
+<div class="experience-row"><div class="exp-left"><span class="exp-date">NOV 2024 — PRESENT</span><h3>Support Engineer</h3><p>Ticketless Parking</p></div><div class="exp-right"><p>Support live parking technology systems while delivering software enhancements and internal automation.</p><ul><li>Manage Jira support and development tickets; investigate incidents and implement application improvements.</li><li>Provide remote support with TeamViewer, phone and email; coordinate resolutions with customers and technicians.</li><li>Configure Windows/Linux systems, troubleshoot production environments and maintain company web content.</li><li>Create customer quotations in Xero and build tools that streamline internal workflows.</li></ul><div class="tags"><span>Jira</span><span>TeamViewer</span><span>Linux</span><span>JavaScript</span><span>SQL</span><span>WordPress</span></div></div></div>
+<div class="experience-row"><div class="exp-left"><span class="exp-date">SEP 2022 — JAN 2026</span><h3>Customer Service Representative</h3><p>Point Parking</p></div><div class="exp-right"><p>Handled approximately 50 daily customer interactions across phone, email and intercom channels, resolving enquiries and assisting with equipment issues.</p></div></div>
+<div class="experience-row"><div class="exp-left"><span class="exp-date">JAN 2022 — APR 2023</span><h3>Head Teacher / Teaching Assistant</h3><p>Code Camp</p></div><div class="exp-right"><p>Delivered coding lessons, guided students through technical challenges and supported teaching assistants.</p></div></div>
+</div></div></section>
+<section class="section wrap about-section" id="about"><div class="section-heading"><div><p class="kicker">03 / ABOUT & SKILLS</p><h2>Curiosity meets <em>execution.</em></h2></div></div><div class="about-grid"><div><p class="about-intro">I enjoy working across the full lifecycle of a technical problem — understanding the user, diagnosing the issue, building a solution and making sure it works in the real world.</p><p class="about-copy">I graduated from the University of Technology Sydney with a Bachelor of Computing Science (Honours) in Enterprise Systems Development. My work bridges software development and application support, giving me perspective on both how systems are built and how people actually use them.</p><div class="education"><span>EDUCATION</span><strong>University of Technology Sydney</strong><p>Bachelor of Computing Science (Honours) · 2024</p></div></div><div class="skill-groups"><div><h3>Development</h3><p>JavaScript · TypeScript · Python · React · Next.js · Node.js · REST APIs</p></div><div><h3>Data & infrastructure</h3><p>PostgreSQL · SQL · Firebase · Docker · Git · Linux · Windows</p></div><div><h3>Support & business systems</h3><p>Jira · TeamViewer · Xero · WordPress · Incident management · Customer support</p></div></div></div></section>
+<section class="contact-section" id="contact"><div class="wrap contact-inner"><p class="kicker">04 / GET IN TOUCH</p><h2>Have a challenge <em>worth solving?</em></h2><p>I'm interested in opportunities across software engineering, application support and technical operations.</p><a class="button contact-button" href="mailto:hope91824@gmail.com">Let's connect <span>↗</span></a><div class="contact-links"><a href="https://github.com/CharlieH7" target="_blank" rel="noopener">GitHub ↗</a><a href="https://www.linkedin.com/in/charliephhuang/" target="_blank" rel="noopener">LinkedIn ↗</a><a href="./assets/Resume.pdf" target="_blank" rel="noopener">Résumé ↗</a></div></div></section>
+</main><footer class="site-footer"><div class="wrap footer-inner"><span>© <span id="year">2026</span> Charlie Huang</span><span>Designed & developed with intention.</span><a href="#top">Back to top ↑</a></div></footer>
+</body></html>
